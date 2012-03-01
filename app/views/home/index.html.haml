@@ -1,2 +1,14 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.row
+  .span12.columns
+    #myCarousel.carousel.slide
+      .carousel-inner
+        .item.active
+          = image_tag "front-page3.jpg"
+          .carousel-caption
+            %h4 haha
+            %p desc
+        - 1.upto(4) do |i|
+          .item
+            = image_tag "front-page#{i}.jpg"
+      %a.left.carousel-control{:href => "#myCarousel", "data-slide" => "prev"}
+      %a.right.carousel-control{:href => "#myCarousel", "data-slide" => "next"}

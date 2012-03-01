@@ -1,13 +1,4 @@
 Wharton::Application.routes.draw do
-  get "home/about"
-
-  get "home/job"
-
-  get "home/contact"
-
-  get "home/english"
-
-  get "home/index"
 
   resources :articles
 
@@ -64,6 +55,11 @@ Wharton::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
 
+  match 'index' => 'home#index'
+  match 'job' => 'home#job'
+  match 'contact' => 'home#contact'
+  match 'english' => 'home#english'
+  match 'about' => 'home#about'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

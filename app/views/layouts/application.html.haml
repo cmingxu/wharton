@@ -8,10 +8,6 @@
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     / Le styles
-    :css
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
     = stylesheet_link_tag "application", :media => "all"
     / Le fav and touch icons
     %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
@@ -21,38 +17,27 @@
 
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "#"}Wharton
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-
     .container
+      %header
+        =link_to image_tag("logo.jpg"), index_path
+      .subnav
+        .container
+          %ul.nav.nav-pills
+            %li=link_to "首页", index_path
+            %li=link_to "企业简介", index_path
+            %li=link_to "产品介绍", products_path
+            %li=link_to "最新动态", articles_path
+            %li=link_to "招贤纳士", job_path
+            %li=link_to "联系我们", contact_path
+            %li=link_to "ENGLISH", english_path
 
-      .content
-        .row
-          .span9
-            = yield
-          .span1 &nbsp;
-          .span3
-            .well.sidebar-nav
-              %h3 Sidebar
-              %ul.nav.nav-list
-                %li.nav-header Sidebar
-                %li= link_to "Link 1", "/path1"
-                %li= link_to "Link 2", "/path2"
-                %li= link_to "Link 3", "/path3"
+
+      = yield
     
+    
+      %br
       %footer
-        %p &copy; Company 2012
+        %p &copy; 佛山市沃顿数控设备有限公司    电话：0757- 81805777    传真：0757- 82780335 
     /
       Le javascript
       \==================================================
