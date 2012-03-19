@@ -1,14 +1,38 @@
-.row
-  .span12.columns
+.row.columns
+  .span3
+    %p.well{:style => "margin-top: 10px;"}
+      佛山市沃顿数控设备有限公司位于美丽的珠江三角洲腹地广东省佛山市，是一家专业致力于研发、设计、生产、销售自动化喷漆设备的高科技企业。   
+      公司秉承“科技服务自动化”的理念，以实现“绿色喷漆”为目标。聚集了众多在机械设计、自动化控制、数控、表面处理等行业的专业人才。依托佛山的生产制造业优势，开发出国内一流技术的“全自动喷漆机”。产品主要应用于：木门、板式家具、檐线、地角线、装饰板、塑料板、玻璃、五金等行业自动喷漆。沃顿喷漆机以性能稳定、做工精细、服务及时等优势，深受国内外各大木门厂的好评！
+      我们真诚期待与广大客户携手合作，共创辉煌明天！
+  .span1
+    &nbsp;
+  .span8
     #myCarousel.carousel.slide
       .carousel-inner
         .item.active
-          = image_tag "front-page3.jpg"
+          = image_tag "front-page3.jpg", :class => "span8"
           .carousel-caption
-            %h4 haha
-            %p desc
-        - 1.upto(4) do |i|
-          .item
-            = image_tag "front-page#{i}.jpg"
+            %h4 
+            %p 
+        .item
+          = image_tag "front-page1.jpg", :class => "span8"
+        .carousel-caption
+          %h4 
+          %p 
+
+
+        .item
+          = image_tag "front-page1.jpg", :class => "span8"
+        .carousel-caption
+          %h4 
+          %p 
+
+
+        .item
+          = image_tag "front-page1.jpg", :class => "span8"
+        .carousel-caption
+          %h4 
+          %p 
       %a.left.carousel-control{:href => "#myCarousel", "data-slide" => "prev"}
       %a.right.carousel-control{:href => "#myCarousel", "data-slide" => "next"}
+

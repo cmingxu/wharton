@@ -1,12 +1,6 @@
-%p#notice= notice
-
 %p
-  %b Product model:
-  = @product.product_model
+  %h3
+    = @product.product_model
 %p
-  %b Description:
-  = @product.description
+  =raw @product.description
 
-= link_to 'Edit', edit_product_path(@product)
-\|
-= link_to 'Back', products_path

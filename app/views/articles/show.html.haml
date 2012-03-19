@@ -1,15 +1,6 @@
-%p#notice= notice
 
-%p
-  %b Name:
+%h3
   = @article.name
 %p
-  %b Meta:
-  = @article.meta
-%p
-  %b Content:
-  = @article.content
+  =raw @article.content
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path

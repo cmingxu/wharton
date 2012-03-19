@@ -1,0 +1,19 @@
+= include_kindeditor_if_needed
+
+
+= form_for @product, :url => @product.persisted? ? admin_product_path(@product) : admin_products_path do |f|
+  -if @product.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :product_model, "型号"
+    = f.text_field :product_model
+  .field
+    = f.label :description, "描述"
+    = f.text_area :description, :id => "kindeditor_id"
+  .actions
+    = f.submit "提交"

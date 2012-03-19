@@ -1,8 +1,10 @@
 Wharton::Application.routes.draw do
 
-  resources :articles
+  devise_for :users
 
-  resources :products
+  resources :articles, :only => [:index, :show]
+
+  resources :products, :only => [:index, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -45,11 +47,16 @@ Wharton::Application.routes.draw do
   #   end
 
   # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  namespace :admin do
+    resources :products
+    resources :articles
+
+    match 'index' => 'home#index'
+    match 'job' => 'articles#job'
+    match 'contact' => 'articles#contact'
+    match 'english' => 'articles#english'
+    match 'about' => 'articles#about'
+  end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

@@ -25,8 +25,8 @@ gem 'awesome_print'
 gem "haml-rails"
 gem "carrierwave"
 gem "rails_kindeditor"
-gem 'authlogic'
 gem "twitter-bootstrap-rails"
+gem 'devise'
 
 
 

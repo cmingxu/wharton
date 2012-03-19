@@ -1,0 +1,21 @@
+
+%table.table
+  %tr
+    %th 名称
+    %th 描述
+    %th 内容
+    %th
+    %th
+    %th
+
+  - @articles.each do |article|
+    %tr
+      %td= article.name
+      %td= article.meta
+      %td= article.content
+      %td= link_to '编辑', edit_admin_article_path(article)
+      %td= link_to '删除', admin_article_path(article), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to '新建', new_admin_article_path

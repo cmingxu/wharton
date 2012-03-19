@@ -1,0 +1,23 @@
+= include_kindeditor_if_needed
+
+= form_for @article, :url => @article.persisted? ? admin_article_path(@article) : admin_articles_path do |f|
+  -if @article.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+      %ul
+        - @article.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name, "标题"
+    = f.text_field :name
+  .field
+    = f.label :meta, "描述"
+    = f.text_field :meta
+  .field
+    = f.label :content, "内容"
+    = f.text_area :content, :id => "kindeditor_id"
+  .actions
+    = f.submit '提交'
+
+= link_to '返回', admin_articles_path
