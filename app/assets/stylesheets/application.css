@@ -12,9 +12,6 @@
  *= require bootstrap_and_overrides
 */
 
-.span12, .container {
-  width: 880px!important;
-}
 
 
 
@@ -36,7 +33,7 @@
 
 
 div.item img {
-   display:block;
-   margin:auto;
+  display:block;
+  margin:auto;
 }
 

@@ -1,5 +1,5 @@
 @import "twitter/bootstrap/bootstrap";
-@import "twitter/bootstrap/responsive";
+//@import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
@@ -15,3 +15,15 @@
 //
 // Example:
 // @linkColor: #ff0000;
+
+@gridColumnWidth:   40px;
+
+@gridColumns:       12;
+@gridColumnWidth:   40px;
+@gridGutterWidth:   20px;
+@siteWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+.columns(@columnSpan: 1) {
+  width: (@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1));
+}
+
